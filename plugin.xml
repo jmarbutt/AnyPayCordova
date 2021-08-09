@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-anypay" version="0.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <name>AnyPayCordova</name>
+
+    <js-module name="AnyPayCordova" src="www/AnyPayCordova.js">
+        <clobbers target="cordova.plugins.AnyPayCordova" />
+    </js-module>
+
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="AnyPayCordova">
+                <param name="ios-package" value="AnyPayCordova" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/AnyPayCordova.m" />
+        <framework custom="true" embed="true" src="libs/ios/AnyPay.framework" target-dir="libs" />
+        <!--<resource-file src="libs/ios/AnyPay.framework" target="libs/AnyPay.framework" />-->
+
+    </platform>
+
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="AnyPayCordova">
+                <param name="android-package" value="com.anywherecommerce.anypaycordova.AnyPayCordova" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml" />
+        <source-file src="src/android/AnyPayCordova.java" target-dir="src/com/anywherecommerce/anypaycordova" />
+
+        <source-file src="src/android/DecryptedData.java" target-dir="src/com/bbpos" />
+        <source-file src="src/android/DES.java" target-dir="src/com/bbpos" />
+        <source-file src="src/android/DUKPTServer.java" target-dir="src/com/bbpos" />
+        <source-file src="src/android/EmvSwipeDecrypt.java" target-dir="src/com/bbpos" />
+        <source-file src="src/android/TripleDES.java" target-dir="src/com/bbpos" />
+
+        <framework custom="true" src="src/android/anypay.gradle" type="gradleReference" />
+        <resource-file src="src/android/gradle.properties" target="../../../gradle.properties" />
+        <resource-file src="libs/android/anypay1_90_6.aar" target="libs/anypay.aar" />
+
+    </platform>
+</plugin>

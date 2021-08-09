@@ -1,0 +1,42 @@
+repositories{
+    jcenter();
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+    google()
+    flatDir {
+        dirs 'src/main/libs'
+    }
+}
+
+
+dependencies {
+    implementation(name: 'anypay', ext: 'aar')
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.android.support:percent:25.3.1'
+    implementation 'com.android.support:appcompat-v7:25.3.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+    implementation 'com.github.smart-fun:XmlToJson:1.4.4'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.3.0'
+    implementation 'androidx.work:work-runtime:2.0.1'
+    implementation 'androidx.work:work-rxjava2:2.0.1'
+
+    api 'org.slf4j:slf4j-api:1.7.25'
+    api 'com.github.tony19:logback-android:2.0.0'
+    api 'com.googlecode.libphonenumber:libphonenumber:8.5.0'
+
+    implementation('com.squareup.retrofit2:converter-gson:2.3.0') {
+        exclude module: 'gson'
+    }
+    implementation('com.squareup.retrofit2:converter-simplexml:2.3.0') {
+        exclude group: 'stax', module: 'stax-api'
+        exclude group: 'stax', module: 'stax'
+        exclude group: 'xpp3', module: 'xpp3'
+    }
+}
+
+android {
+    packagingOptions {
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+}
