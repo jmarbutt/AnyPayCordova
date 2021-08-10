@@ -15,7 +15,7 @@
         </config-file>
         <source-file src="src/ios/AnyPayCordova.m" />
         <framework custom="true" embed="true" src="libs/ios/AnyPay.framework" target-dir="libs" />
-        <!--<resource-file src="libs/ios/AnyPay.framework" target="libs/AnyPay.framework" />-->
+        <resource-file src="libs/ios/AnyPay.framework" target="libs/AnyPay.framework" />
 
     </platform>
 

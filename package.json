@@ -1,6 +1,6 @@
 {
-  "name": "cordova-plugin-anypay",
-  "version": "0.1.0",
+  "name": "cordova-plugin-anypay-jmarbutt",
+  "version": "0.1.1",
   "description": "Cordova plugin for AnyPay SDK (c) 2018 AnywhereCommerce Inc.",
   "cordova": {
     "id": "cordova-plugin-anypay",
